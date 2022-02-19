@@ -1,14 +1,11 @@
 import React, {useEffect}from 'react'
-import logo from '../images/parallax-homepage/gaimLogo.png'
 import clouds from '../images/parallax-homepage/clouds.png'
 import sun from '../images/parallax-homepage/sun.png'
 import ocean from '../images/parallax-homepage/ocean.png'
 import island from '../images/parallax-homepage/island.png'
 import beach from '../images/parallax-homepage/beach.png'
 import tree from '../images/parallax-homepage/tree.png'
-import seagulls from '../sound/seagulls.mp3'
-import Sound from 'react-sound'
-import { Link } from 'react-router-dom'
+import Navbar from './Navbar'
 
 export default function Homepage() {
     useEffect(() => {
@@ -50,38 +47,7 @@ export default function Homepage() {
     })
     return(
         <body>
-            <header id="header">
-                <Sound
-                    url={seagulls}
-                    playStatus={Sound.status.PLAYING}
-                    playFromPosition={100}
-                    volume={5}
-                >
-                </Sound>
-                <a href='/'><img src={logo} alt='logo' id="logo"></img></a> 
-                <ul>
-                    <li>
-                        <Link to="/" className='active header-button'>
-                            Home
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/leaderboard" className='header-button'>                        
-                            Leaderboard
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/login" className='header-button'>
-                            Login
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/play" className='header-button'>
-                            Play
-                        </Link>
-                    </li>
-                </ul>
-            </header>
+            <Navbar />
             <section>
                 <img src={clouds} id="clouds" alt="Home Page Clouds" />
                 <img src={sun} id="sun" alt="Homepage Sun"/>
