@@ -18,6 +18,7 @@
 body{
   min-height: 100vh;
   background: linear-gradient(#92E1F9,#92F9D0);
+  height: 100%;
 }
 
 header{
@@ -48,7 +49,7 @@ header ul li{
   margin-left: 20px;
 }
 
-header ul li a{
+.header-button {
   text-decoration: none;
   padding: 6px 15px;
   color: #053b42;
@@ -82,21 +83,32 @@ section img#background {
   width: 100%;
   height:100%;
 }
-
-section img#clouds {
+#clouds{
   width: 100%;
   height:100%;
 }
-
-section img#foreground {
+#beach {
   width: 100%;
   height: 100%;
   z-index: 100;
 }
-
-section img#sun {
+#sun {
   left: 60%;
   top: 5%;
+}
+#ocean {
+  height: 100%;
+  width: 100%;
+  z-index: 75;
+}
+#island {
+  width: 100%;
+  height: 100%;
+}
+#tree {
+  width: 100%;
+  height: 100%;
+  z-index: 80;
 }
 
 section #text {
@@ -120,7 +132,6 @@ section #btn
   background: #FDF7C2;
   color:#35848f;
   font-size: 2em;
-  margin-top: 5%;
   z-index: 101;
   border: none;
 }
@@ -130,6 +141,18 @@ section #btn
   box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
   color: white;
   border-color: none;
+}
+
+
+div #boxOne {
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-bottom: 500px;
+  padding-top: 2em;
+  position: absolute;
+  z-index: 99;
+  background-color: #FDF7C2;
+  border: 1px solid whitesmoke;
 }
 
 div #titleSec{
