@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans Condensed';
+}
+
+body{
+  min-height: 100vh;
+  background: linear-gradient(#92E1F9,#92F9D0);
+}
+
+header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10000;
+}
+
+header .logo{
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 4em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+}
+
+header ul li{
+  list-style: none;
+  margin-left: 20px;
+}
+
+header ul li a{
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #fff;
+  border-radius: 20px;
+}
+
+header ul li a:hover,
+header ul li a.active
+{
+  background: #fff;
+  color: #9accc6;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 100px;
+}
+
+section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+}
