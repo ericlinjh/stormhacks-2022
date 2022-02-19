@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Open+Sans+Condensed:wght@300&display=swap');
+
+@font-face {
+  font-family:"California";
+  src: url("../public/California.ttf") format("truetype");
+}
 *
+
 {
   margin: 0;
   padding: 0;
@@ -24,13 +32,8 @@ header{
   z-index: 10000;
 }
 
-header .logo{
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  font-size: 4em;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+img#logo {
+  width: 50%;
 }
 
 header ul{
@@ -48,27 +51,95 @@ header ul li{
 header ul li a{
   text-decoration: none;
   padding: 6px 15px;
-  color: #fff;
+  color: #053b42;
   border-radius: 20px;
 }
 
 header ul li a:hover,
 header ul li a.active
 {
-  background: #fff;
-  color: #9accc6;
+  background: #FDF7C2;
+  color: #35848f;
 }
 
 section {
   position: relative;
   width: 100%;
   height: 100vh;
-  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 section img {
   position: absolute;
   top: 0;
   left: 0;
-  width:100%;
+  object-fit: cover;
+}
+
+section img#background {
+  width: 100%;
+  height:100%;
+}
+
+section img#clouds {
+  width: 100%;
+  height:100%;
+}
+
+section img#foreground {
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+}
+
+section img#sun {
+  left: 60%;
+  top: 5%;
+}
+
+.text {
+  position: absolute;
+  top: 29%;
+  color: #e85e5e;
+  white-space: nowrap;
+  font-family: California;
+  font-size: 7.5em;
+  z-index: 9;
+  object-fit: cover;
+}
+
+.btn
+{
+  text-decoration: none;
+  display: inline-block;
+  font-family: California;
+  padding: 8px 30px;
+  border-radius: 40px;
+  background: #FDF7C2;
+  color:#35848f;
+  font-size: 2em;
+  margin-top: 5%;
+  z-index: 101;
+  border: none;
+}
+
+.btn:hover{
+  background: #e85e5e;
+  box-shadow: 0 0 5px #ff96ad, 0 0 25px #ff96ad, 0 0 50px #ff96ad, 0 0 200px #ff96ad;
+  color: white;
+  border-color: none;
+}
+
+div #titleSec{
+  font-family: California;
+  font-size: 4em;
+  text-align: center;
+}
+
+div #paragraphSec{
+  font-family: Lato;
+  font-size: 2em;
+  text-align: center;
 }
