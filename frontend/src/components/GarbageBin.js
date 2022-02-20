@@ -3,7 +3,7 @@ import Garbage from './Garbage.js'
 import { useFrame } from '@react-three/fiber'
 
 
-export default function GarbageBin(){
+export default function GarbageBin({score, setScore, livesLeft, setLivesLeft }) {
     const [garbageArray, setGarbageArray] = useState([[0, 7, -4], [-3, 10, -7], [8, 12, -5], [-7, 14, -14], [9, 16, -11] ])
 
     function decrementY(array, delta){
@@ -16,6 +16,7 @@ export default function GarbageBin(){
         array.forEach((element, index) => {
             if (element[1] <= -8) { 
                 updateGarbagePosition(index)
+                setLivesLeft(prevLives => prevLives - 1)
              }    
         });
     }
@@ -41,7 +42,7 @@ export default function GarbageBin(){
     return(
         <group>
             {garbageArray.map((position, index) => (
-                <Garbage key={index} position={position} onClick={() => updateGarbagePosition(index)}/>
+                <Garbage key={index} position={position} onClick={() => { updateGarbagePosition(index); setScore(prevScore => prevScore + 1)}}/>
             ))}
         </group>
 
