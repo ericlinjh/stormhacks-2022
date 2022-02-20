@@ -6,8 +6,7 @@ export default function Popup({closeModal}) {
     return (
         <div className="modalBackground">
             <div className="modalContainer">
-                <div className="titleCloseBtn">
-                <button onClick={()=> closeModal(false)}>X</button>
+                <div className="titleCloseBtn"><button onClick={closeModal}>X</button>
                 </div>
                 <div className='title'>
                     <h1>Do you want to continue playing?</h1>
