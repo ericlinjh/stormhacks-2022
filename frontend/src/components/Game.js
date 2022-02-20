@@ -1,4 +1,4 @@
-import React, {Suspense} from 'react'
+import React, { Suspense, useEffect, useState } from 'react'
 import { Canvas } from "@react-three/fiber";
 import Beach from "./Beach";
 import Timer from "./Timer";
@@ -6,15 +6,28 @@ import { PointerLockControls } from "@react-three/drei";
 import { useLoader } from '@react-three/fiber'
 import crosshair1 from '../images/parallax-homepage/crosshair1.png'
 import GarbageBin from './GarbageBin'
-import Popup from './Modal'
-import {useState} from 'react'
+import Popup from './Popup'
+import GameOverModal from './GameOverModal'
 import Modal from "@mui/material/Modal"
 
 
 export default function Game() {
-    const [openModal, setOpenModal] = useState(false);
-    const [score, setScore] = useState(0);
+    const [isPopupModalOpen, setIsPopupModalOpen] = useState(false);
+    const [isGameOverModalOpen, setIsGameOverModalOpen] = useState(false)
+    const [score, setScore] = useState(0)
+    const [livesLeft, setLivesLeft] = useState(6)
 
+    useEffect(() => {
+        if (livesLeft === 0) {
+            setIsGameOverModalOpen(true)
+        }
+    }, [livesLeft])
+
+    function resetGame() {
+        setScore(0)
+        setLivesLeft(6)
+        setIsGameOverModalOpen(false)
+    }
     return (
         <div style={{width: "100vw", height: "100vh"}}> 
         
@@ -25,23 +38,30 @@ export default function Game() {
                   offsetY: e.target.height / 2
                 })
               }}>
+                  
                 <PointerLockControls />
                 <Suspense fallback={null} >
                     {/* <Garbage 
                         onClick={() => console.log("click")}
                     /> */}
                     <Beach />
-                    <GarbageBin />
+                    <GarbageBin score={score} setScore={setScore} livesLeft={livesLeft} setLivesLeft={setLivesLeft}/>
                 </Suspense >
                 {/* <color attach="background" args={["black"]} /> */}
                 <ambientLight intensity={0.5}/>
                 <pointLight position={[10, 10, 0]} intensity={0.1}/>
             </Canvas>
-            <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}}src={crosshair1} alt="crosshair1"/>
-            <button className = "openModalBtn" onClick={() => {setOpenModal(true)}}>Click here to go back!</button>
-            <Modal open={openModal} onClose={() => setOpenModal(false)}>
-                <Popup closeModal={() => setOpenModal(false)}/>
-            </Modal> 
+            <div style={{ position: "absolute", top: "5%", left: "5%", width:"36px", height:"36px" }}>{score}</div>
+            <div style={{ position: "absolute", top: "5%", right: "5%", width:"36px", height:"36px" }}>{livesLeft}</div>
+            <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}} src={crosshair1} alt="crosshair1"/>
+            <button style={{ position: "absolute", top: "95%", left: "2%", height:"36px" }} className = "openModalBtn" onClick={() => {setIsPopupModalOpen(true)}}>Click here to go back!</button>
+            <Modal open={isPopupModalOpen} onClose={() => setIsPopupModalOpen(false)}>
+                <Popup closeModal={() => setIsPopupModalOpen(false)}/>
+            </Modal>
+            <Modal open={isGameOverModalOpen} onClose={() => setIsGameOverModalOpen(false)}>
+                <GameOverModal closeModal={() => setIsPopupModalOpen(false)} score={score} resetGame={resetGame} />
+            </Modal>
+
         </div>
     )
 }
