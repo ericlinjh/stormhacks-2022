@@ -61,32 +61,36 @@ export default function TempLeaderboard() {
                 </li>
             </ul>
           </header>
-          <TableContainer component={Paper} sx={{backgroundColor: "#FDF7C2", width:"auto", height: "auto"}}>
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Date</TableCell>
-                <TableCell sx={{paddingLeft: "100px"}}>Score</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {scores.map((score, index) => (
-                <TableRow
-                  key={index}
-                >
-                  <TableCell sx={{paddingRight: "50px"}}>
-                    {score.name}
-                  </TableCell>
-                  <TableCell>
-                    {score.date}
-                  </TableCell>
-                  <TableCell sx={{paddingLeft: "100px"}}>
-                    {score.score}
-                  </TableCell>
-                </TableRow>  
-              ))}
-            </TableBody>
-          </TableContainer>
+          <section>
+            <img src={clouds} id="clouds" alt="Home Page Clouds" />
+            <TableContainer component={Paper} sx={{backgroundColor: "#FDF7C2", width:"auto", height: "auto", zIndex: "10000"}}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Name</TableCell>
+                  <TableCell>Date</TableCell>
+                  <TableCell sx={{paddingLeft: "100px"}}>Score</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {scores.map((score, index) => (
+                  <TableRow
+                    key={index}
+                  >
+                    <TableCell sx={{paddingRight: "50px"}}>
+                      {score.name}
+                    </TableCell>
+                    <TableCell>
+                      {score.date}
+                    </TableCell>
+                    <TableCell sx={{paddingLeft: "100px"}}>
+                      {score.score}
+                    </TableCell>
+                  </TableRow>  
+                ))}
+              </TableBody>
+            </TableContainer>
+          </section>
+          
       </body>
     )
 }
