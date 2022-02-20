@@ -57,11 +57,6 @@ export default function TempLeaderboard() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/leaderboard" className='header-button'>
-                        Login
-                    </Link>
-                </li>
-                <li>
                     <Link to="/play" className='header-button'>
                         Play
                     </Link>

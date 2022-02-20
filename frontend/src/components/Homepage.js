@@ -97,11 +97,6 @@ export default function Homepage() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/" className='header-button'>
-                                Login
-                            </Link>
-                        </li>
-                        <li>
                             <Link to="/play" className='header-button'>
                                 Play
                             </Link>
