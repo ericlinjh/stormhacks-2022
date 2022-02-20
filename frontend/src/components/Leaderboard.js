@@ -15,6 +15,12 @@ export default function TempLeaderboard() {
         {name: "Briana", score: "69", date: "2022-02-19T20:22:21.017Z"},
         {name: "Dexter", score: "100", date: "2022-02-19T20:22:21.017Z"},
       ];
+
+      scores.sort(function(a, b) {
+        return b.score - a.score;
+      }); 
+
+      console.log(scores)
     
     return(
       <body style={{
