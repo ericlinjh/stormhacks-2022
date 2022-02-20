@@ -23,25 +23,10 @@ export default function Homepage() {
 
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
-            clouds.style.left = '-' + 7 * value + 'px';
-            clouds.style.top = value + "px";
-
+            clouds.style.left = '-' + value + 'px';
             sun.style.top = (50 - value) + 'px';
-
-            tree.style.top = value + 'px';
-           
-            island.style.left = 3 * value + 'px'
-            island.style.top = value + 'px'
-            
-            text.style.marginTop = value + 'px';
-            text.style.marginRight = 12 * value + 'px';
-
-            btn.style.marginTop = '-' + 3 * value + 'px';
-            
-            beach.style.top = value + 'px';
-            ocean.style.top = value + 'px';
-            header.style.top = value + 'px'
-
+            island.style.left = value + 'px';
+            text.style.marginRight = 3 * value + 'px';
             //boxOne.style.marginTop = '-' + value + 'px'
         })
     })
