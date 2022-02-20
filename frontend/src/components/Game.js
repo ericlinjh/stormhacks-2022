@@ -66,7 +66,7 @@ export default function Game() {
                 <pointLight position={[10, 10, 0]} intensity={0.1}/>
             </Canvas>
             <div style={{ position: "absolute", top: "5%", left: "5%", width:"36px", height:"36px" }}>{score}</div>
-            <div style={{ position: "absolute", top: "5%", right: "5%", width:"36px", height:"36px" }}>{livesLeft}</div>
+            <div style={{ position: "absolute", top: "5%", right: "5%", width:"36px", height:"36px"}}>{livesLeft}</div>
             <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}} src={crosshair1} alt="crosshair1"/>
             <button style={{ position: "absolute", top: "95%", left: "2%", height:"36px" }} className = "openModalBtn" onClick={() => {setIsPopupModalOpen(true)}}>Press Escape!</button>
             <Modal open={isPopupModalOpen} onClose={() => setIsPopupModalOpen(false)}>
