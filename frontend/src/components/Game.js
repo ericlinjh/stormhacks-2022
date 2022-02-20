@@ -71,7 +71,7 @@ export default function Game() {
             <div style={{ position: "absolute", top: "5%", left: "5%", width:"36px", height:"36px", fontSize:"500%" }}>SCORE: {score}</div>
             <div style={{ position: "absolute", top: "5%", right: "10%", width:"36px", height:"36px", fontSize:"500%" }}>LIVES: {livesLeft}</div>
             <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}} src={crosshair1} alt="crosshair1"/>
-            <button style={{ position: "absolute", top: "95%", left: "2%", height:"36px" }} className = "openModalBtn" onClick={() => {setIsPopupModalOpen(true)}}>Press Escape!</button>
+            <button style={{ position: "absolute", top: "88%", left: "2%", height:"92px", width: "100px", fontSize:"2em", border:"none", borderRadius:"20px" }} className = "openModalBtn" onClick={() => {setIsPopupModalOpen(true)}}>Press Escape!</button>
             <Modal open={isPopupModalOpen} onClose={() => setIsPopupModalOpen(false)}>
                 <Popup closeModal={() => setIsPopupModalOpen(false)}/>
             </Modal>
