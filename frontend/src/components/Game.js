@@ -13,7 +13,8 @@ import Modal from "@mui/material/Modal"
 
 export default function Game() {
     const [openModal, setOpenModal] = useState(false);
-    const [score, setScore] = useState(0)
+    const [score, setScore] = useState(0);
+
     return (
         <div style={{width: "100vw", height: "100vh"}}> 
         
