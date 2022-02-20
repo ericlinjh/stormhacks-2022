@@ -1,20 +1,27 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import clouds from '../images/parallax-homepage/clouds.png'
 import { TableBody, TableCell, TableContainer, TableHead, TableRow, Paper}from '@mui/material'
 import seagulls from '../sound/seagulls.mp3'
 import Sound from 'react-sound'
 import { Link } from 'react-router-dom'
 import logo from '../images/parallax-homepage/gaimLogo.png'
+import { getAllScores } from '../api/requestMethods'
+
 
 export default function TempLeaderboard() {
-    const scores = [
-        {name: "Brian", score: "69", date: "2022-02-19T20:22:21.017Z"},
-        {name: "Eric", score: "690", date: "2022-01-19T20:22:21.017Z"},
-        {name: "Dylan", score: "609", date: "2022-03-19T20:22:21.017Z"},
-        {name: "Hargun", score: "169", date: "2022-04-19T20:22:21.017Z"},
-        {name: "Briana", score: "69", date: "2022-02-19T20:22:21.017Z"},
-        {name: "Dexter", score: "100", date: "2022-02-19T20:22:21.017Z"},
-      ];
+  const [scores, setScores] = useState([])
+
+  useEffect(() => {
+    getAllScores()
+        .then(response => {
+            console.log(response.data);
+            setScores(response.data.scores);
+        })
+        .catch(e => {
+            console.log(e);
+        });
+}, [])
+
 
       scores.sort(function(a, b) {
         return b.score - a.score;
@@ -80,7 +87,7 @@ export default function TempLeaderboard() {
                       {score.name}
                     </TableCell>
                     <TableCell>
-                      {score.date}
+                      {score.dateOfScore}
                     </TableCell>
                     <TableCell sx={{paddingLeft: "100px"}}>
                       {score.score}
