@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState, useCallback } from 'react'
+import React, { Suspense, useEffect, useState, useCallback, useRef } from 'react'
 import { Canvas } from "@react-three/fiber";
 import Beach from "./Beach";
 import { PointerLockControls } from "@react-three/drei";
@@ -8,6 +8,7 @@ import GarbageBin from './GarbageBin'
 import Popup from './Popup'
 import GameOverModal from './GameOverModal'
 import Modal from "@mui/material/Modal"
+import PropTypes from 'prop-types'
 
 
 export default function Game() {
@@ -15,6 +16,7 @@ export default function Game() {
     const [isGameOverModalOpen, setIsGameOverModalOpen] = useState(false)
     const [score, setScore] = useState(0)
     const [livesLeft, setLivesLeft] = useState(6)
+    const controls = useRef()
 
     const escFunction = useCallback((event) => {
         if (event.key === "Escape") {
@@ -34,6 +36,7 @@ export default function Game() {
     useEffect(() => {
         if (livesLeft === 0) {
             setIsGameOverModalOpen(true)
+            controls.current.unlock()
         }
     }, [livesLeft])
 
@@ -53,7 +56,7 @@ export default function Game() {
                 })
               }}>
                   
-                <PointerLockControls />
+                <PointerLockControls ref={controls}/>
                 <Suspense fallback={null} >
                     {/* <Garbage 
                         onClick={() => console.log("click")}
@@ -65,8 +68,8 @@ export default function Game() {
                 <ambientLight intensity={0.5}/>
                 <pointLight position={[10, 10, 0]} intensity={0.1}/>
             </Canvas>
-            <div style={{ position: "absolute", top: "5%", left: "5%", width:"36px", height:"36px" }}>{score}</div>
-            <div style={{ position: "absolute", top: "5%", right: "5%", width:"36px", height:"36px"}}>{livesLeft}</div>
+            <div style={{ position: "absolute", top: "5%", left: "5%", width:"36px", height:"36px", fontSize:"500%" }}>SCORE: {score}</div>
+            <div style={{ position: "absolute", top: "5%", right: "10%", width:"36px", height:"36px", fontSize:"500%" }}>LIVES: {livesLeft}</div>
             <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}} src={crosshair1} alt="crosshair1"/>
             <button style={{ position: "absolute", top: "95%", left: "2%", height:"36px" }} className = "openModalBtn" onClick={() => {setIsPopupModalOpen(true)}}>Press Escape!</button>
             <Modal open={isPopupModalOpen} onClose={() => setIsPopupModalOpen(false)}>
@@ -79,3 +82,7 @@ export default function Game() {
         </div>
     )
 }
+
+Game.propTypes = {
+    score: PropTypes.string.isRequired,
+};

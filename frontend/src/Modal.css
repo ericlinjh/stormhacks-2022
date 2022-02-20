@@ -1,7 +1,7 @@
 .modalBackground {
     width: 100vw;
     height: 100vh;
-    background-color: rgb(156, 222, 248);
+    background-color: none;
     position: fixed;
     display: flex;
     justify-content: center;

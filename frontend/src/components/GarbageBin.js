@@ -3,13 +3,15 @@ import Garbage from './Garbage.js'
 import { useFrame } from '@react-three/fiber'
 
 
-export default function GarbageBin({score, setScore, livesLeft, setLivesLeft }) {
+export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, isPopupModalOpen, isGameOverModalOpen }) {
     const [garbageArray, setGarbageArray] = useState([[0, 7, -4], [-3, 10, -7], [8, 12, -5], [-7, 14, -14], [9, 16, -11] ])
 
     function decrementY(array, delta){
+        if(!isPopupModalOpen && !isGameOverModalOpen){
         const velocity = 7 * delta
         const newArray = array.map((position) => [position[0], position[1] - velocity, position[2]])
         setGarbageArray(newArray)
+        }
     }
 
     function checkCollisions(array){
