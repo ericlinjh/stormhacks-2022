@@ -2,7 +2,7 @@ import React from 'react'
 import '../Modal.css'
 import { Link } from 'react-router-dom'
 
-export default function Popup({ closeModal, score, resetGame }) {
+export default function GameOverModal({ closeModal, score, resetGame }) {
     return (
         <div className="modalBackground">
             <div className="modalContainer">

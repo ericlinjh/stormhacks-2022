@@ -15,5 +15,5 @@ export const getAllScores = () => {
 }
 
 export const createScore = (data) => {
-  return axios.post(BASE_URL + '/scores', { data })
+  return axios.post(BASE_URL + '/scores', data)
 }

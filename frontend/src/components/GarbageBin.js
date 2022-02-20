@@ -3,18 +3,17 @@ import Garbage from './Garbage.js'
 import { useFrame } from '@react-three/fiber'
 
 
-export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, isPopupModalOpen, isGameOverModalOpen, unlock }) {
+export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, isPopupModalOpen, isGameOverModalOpen, isNameModalOpen, unlock }) {
     const [garbageArray, setGarbageArray] = useState([[0, 7, -4], [-3, 10, -7], [8, 12, -5], [-7, 14, -14], [9, 16, -11] ])
 
     function decrementY(array, delta){
-        if(!isPopupModalOpen && !isGameOverModalOpen){
+        if(!isPopupModalOpen && !isGameOverModalOpen && !isNameModalOpen){
         const velocity = 7 * delta
         const newArray = array.map((position) => [position[0], position[1] - velocity, position[2]])
         setGarbageArray(newArray)
         }
         else{
             unlock()
-            console.log("unlocking")
         }
     }
 

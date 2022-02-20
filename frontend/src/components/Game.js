@@ -7,17 +7,21 @@ import crosshair1 from '../images/parallax-homepage/crosshair1.png'
 import GarbageBin from './GarbageBin'
 import Popup from './Popup'
 import GameOverModal from './GameOverModal'
+import NameModal from './NameModal'
 import Modal from "@mui/material/Modal"
 import PropTypes from 'prop-types'
+import { createScore } from '../api/requestMethods';
 
 
 export default function Game() {
     const [isPopupModalOpen, setIsPopupModalOpen] = useState(false);
     const [isGameOverModalOpen, setIsGameOverModalOpen] = useState(false)
+    const [isNameModalOpen, setIsNameModalOpen] = useState(true)
+    const [name, setName] = useState("")
     const [score, setScore] = useState(0)
     const [livesLeft, setLivesLeft] = useState(6)
     const controls = useRef()
-
+    
     const escFunction = useCallback((event) => {
         if (event.key === "Escape") {
             setIsPopupModalOpen(true)
@@ -32,11 +36,16 @@ export default function Game() {
         }
     })
 
+    useEffect(() => {
+        console.log(name)
+    }, [name])
+
 
     useEffect(() => {
         if (livesLeft === 0) {
             setIsGameOverModalOpen(true)
             controls.current.unlock()
+            createScore({name: name, score: score})
         }
     }, [livesLeft])
 
@@ -52,6 +61,7 @@ export default function Game() {
         setScore(0)
         setLivesLeft(6)
         setIsGameOverModalOpen(false)
+        setIsNameModalOpen(false)
     }
 
    
@@ -73,7 +83,7 @@ export default function Game() {
                         onClick={() => console.log("click")}
                     /> */}
                     <Beach />
-                    <GarbageBin unlock={unlock} score={score} setScore={setScore} livesLeft={livesLeft} setLivesLeft={setLivesLeft} isPopupModalOpen={isPopupModalOpen} isGameOverModalOpen={isGameOverModalOpen}/>
+                    <GarbageBin unlock={unlock} score={score} setScore={setScore} livesLeft={livesLeft} setLivesLeft={setLivesLeft} isPopupModalOpen={isPopupModalOpen} isGameOverModalOpen={isGameOverModalOpen} isNameModalOpen={isNameModalOpen}/>
                 </Suspense >
                 {/* <color attach="background" args={["black"]} /> */}
                 <ambientLight intensity={0.5}/>
@@ -87,7 +97,10 @@ export default function Game() {
                 <Popup closeModal={() => setIsPopupModalOpen(false)}/>
             </Modal>
             <Modal open={isGameOverModalOpen} onClose={() => setIsGameOverModalOpen(false)}>
-                <GameOverModal closeModal={() => {setIsPopupModalOpen(false); lock()}} score={score} resetGame={resetGame} />
+                <GameOverModal closeModal={() => {setIsGameOverModalOpen(false); lock()}} score={score} resetGame={resetGame} />
+            </Modal>
+            <Modal open={isNameModalOpen} onClose={() => setIsNameModalOpen(false)}>
+                <NameModal closeModal={() => {setIsNameModalOpen(false); lock()}} resetGame={resetGame} setName={setName} />
             </Modal>
 
         </div>
