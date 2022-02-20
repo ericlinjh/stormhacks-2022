@@ -57,7 +57,7 @@ export default function TempLeaderboard() {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/login" className='header-button'>
+                    <Link to="/leaderboard" className='header-button'>
                         Login
                     </Link>
                 </li>
@@ -79,7 +79,7 @@ export default function TempLeaderboard() {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {scores.map((score, index) => (
+                {scores.slice(0, 10).map((score, index) => (
                   <TableRow
                     key={index}
                   >
@@ -87,7 +87,7 @@ export default function TempLeaderboard() {
                       {score.name}
                     </TableCell>
                     <TableCell>
-                      {score.dateOfScore}
+                      {score.dateOfScore.slice(0, 10)}
                     </TableCell>
                     <TableCell sx={{paddingLeft: "100px"}}>
                       {score.score}

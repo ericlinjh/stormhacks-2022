@@ -97,7 +97,7 @@ export default function Homepage() {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/login" className='header-button'>
+                            <Link to="/" className='header-button'>
                                 Login
                             </Link>
                         </li>
