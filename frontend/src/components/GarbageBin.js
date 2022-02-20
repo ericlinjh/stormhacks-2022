@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Garbage from './Garbage.js'
 import { useFrame } from '@react-three/fiber'
 
 
-export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, isPopupModalOpen, isGameOverModalOpen }) {
+export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, isPopupModalOpen, isGameOverModalOpen, unlock }) {
     const [garbageArray, setGarbageArray] = useState([[0, 7, -4], [-3, 10, -7], [8, 12, -5], [-7, 14, -14], [9, 16, -11] ])
 
     function decrementY(array, delta){
@@ -12,7 +12,17 @@ export default function GarbageBin({score, setScore, livesLeft, setLivesLeft, is
         const newArray = array.map((position) => [position[0], position[1] - velocity, position[2]])
         setGarbageArray(newArray)
         }
+        else{
+            unlock()
+            console.log("unlocking")
+        }
     }
+
+    useEffect(() => {
+        if (livesLeft === 0) {
+            setGarbageArray([[0, 7, -4], [-3, 10, -7], [8, 12, -5], [-7, 14, -14], [9, 16, -11] ])
+        }
+    }, [livesLeft])
 
     function checkCollisions(array){
         array.forEach((element, index) => {

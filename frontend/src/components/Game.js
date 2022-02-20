@@ -40,11 +40,22 @@ export default function Game() {
         }
     }, [livesLeft])
 
+    function lock(){
+        controls.current.lock()
+    }
+
+    function unlock(){
+        controls.current.unlock()
+    }
+
     function resetGame() {
         setScore(0)
         setLivesLeft(6)
         setIsGameOverModalOpen(false)
     }
+
+   
+
     return (
         <div style={{width: "100vw", height: "100vh"}}> 
         
@@ -62,7 +73,7 @@ export default function Game() {
                         onClick={() => console.log("click")}
                     /> */}
                     <Beach />
-                    <GarbageBin score={score} setScore={setScore} livesLeft={livesLeft} setLivesLeft={setLivesLeft} isPopupModalOpen={isPopupModalOpen} isGameOverModalOpen={isGameOverModalOpen}/>
+                    <GarbageBin unlock={unlock} score={score} setScore={setScore} livesLeft={livesLeft} setLivesLeft={setLivesLeft} isPopupModalOpen={isPopupModalOpen} isGameOverModalOpen={isGameOverModalOpen}/>
                 </Suspense >
                 {/* <color attach="background" args={["black"]} /> */}
                 <ambientLight intensity={0.5}/>
@@ -76,7 +87,7 @@ export default function Game() {
                 <Popup closeModal={() => setIsPopupModalOpen(false)}/>
             </Modal>
             <Modal open={isGameOverModalOpen} onClose={() => setIsGameOverModalOpen(false)}>
-                <GameOverModal closeModal={() => setIsPopupModalOpen(false)} score={score} resetGame={resetGame} />
+                <GameOverModal closeModal={() => {setIsPopupModalOpen(false); lock()}} score={score} resetGame={resetGame} />
             </Modal>
 
         </div>
