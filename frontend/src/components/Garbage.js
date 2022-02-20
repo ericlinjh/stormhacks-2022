@@ -1,12 +1,13 @@
 import React, { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 
-export default function Model(props) {
+export default function Garbage( { onClick, position} ) {
   const group = useRef();
   const { nodes, materials } = useGLTF("/garbage.glb");
   return (
-    <group ref={group} {...props} dispose={null}>
+    <group ref={group} position={position} dispose={null}>
       <mesh
+        onPointerDown={onClick}
         castShadow
         receiveShadow
         geometry={nodes.Icosphere.geometry}

@@ -33,7 +33,7 @@ export default function Game() {
                 <ambientLight intensity={0.5}/>
                 <pointLight position={[10, 10, 0]} intensity={0.1}/>
             </Canvas>
-            <img style={{position: "absolute", top: "50%", left: "50%", width:"3%"}}src={crosshair1} alt="crosshair1"/>
+            <img style={{position: "absolute", top: "50%", left: "50%", width:"36px", height:"36px", transform: "translate(-9px, -9px)"}}src={crosshair1} alt="crosshair1"/>
             <button className = "openModalBtn" onClick={() => {setOpenModal(true)}}>Click here to go back!</button>
             {openModal && <Modal closeModal={setOpenModal}/>} 
         </div>

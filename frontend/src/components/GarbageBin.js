@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Model from './Garbage.js'
+import Garbage from './Garbage.js'
 import { useFrame } from '@react-three/fiber'
 
 
@@ -15,9 +15,7 @@ export default function GarbageBin(){
     function checkCollisions(array){
         array.forEach((element, index) => {
             if (element[1] <= -8) { 
-                let newArray = [...array]
-                newArray[index] = generateNewPosition()
-                setGarbageArray(newArray)
+                updateGarbagePosition(index)
              }    
         });
     }
@@ -29,6 +27,12 @@ export default function GarbageBin(){
         return [x, y, z]
     }
 
+    function updateGarbagePosition(index){
+        let newArray = [...garbageArray]
+        newArray[index] = generateNewPosition()
+        setGarbageArray(newArray)
+    }
+
     useFrame((state, delta) => {
         decrementY(garbageArray, delta);
         checkCollisions(garbageArray);
@@ -37,7 +41,7 @@ export default function GarbageBin(){
     return(
         <group>
             {garbageArray.map((position, index) => (
-                <Model key={index} position={position}/>
+                <Garbage key={index} position={position} onClick={() => updateGarbagePosition(index)}/>
             ))}
         </group>
 
