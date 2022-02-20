@@ -1,4 +1,4 @@
-import React, {useEffect}from 'react'
+import React, {useEffect} from 'react'
 import clouds from '../images/parallax-homepage/clouds.png'
 import sun from '../images/parallax-homepage/sun.png'
 import ocean from '../images/parallax-homepage/ocean.png'
@@ -6,20 +6,15 @@ import island from '../images/parallax-homepage/island.png'
 import beach from '../images/parallax-homepage/beach.png'
 import tree from '../images/parallax-homepage/tree.png'
 import Navbar from './Navbar'
+import { Link } from 'react-router-dom'
 
 export default function Homepage() {
     useEffect(() => {
         console.log("test");
         let clouds = document.getElementById('clouds');
         let sun = document.getElementById('sun');
-        let ocean = document.getElementById('ocean');
         let island = document.getElementById('island');
         let text = document.getElementById('text');
-        let btn = document.getElementById('btn');
-        let beach = document.getElementById('beach');
-        let header = document.getElementById('header');
-        let tree = document.getElementById('tree');
-        let boxOne = document.getElementById('boxOne')
 
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
@@ -27,7 +22,6 @@ export default function Homepage() {
             sun.style.top = (50 - value) + 'px';
             island.style.left = value + 'px';
             text.style.marginRight = 3 * value + 'px';
-            //boxOne.style.marginTop = '-' + value + 'px'
         })
     })
     return(
@@ -39,7 +33,9 @@ export default function Homepage() {
                 <img src={island} id="island" alt="Homepage Island"/>
                 <img src={ocean} id="ocean" alt="Homepage Ocean"/>
                 <h1 id="text">G a r b a g e&nbsp;&nbsp;&nbsp;A i m</h1>
-                <button href="#" id='btn'>Play Now</button>
+                <Link to='/play' style={{zIndex: "10000"}}>
+                    <button id='btn'>Play Now</button>
+                </Link>
                 <img src={beach} id="beach" alt="Homepage Foreground"/>
                 <img src={tree} id="tree" alt="Homepage Tree"/>
             </section>
