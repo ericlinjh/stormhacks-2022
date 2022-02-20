@@ -25,6 +25,11 @@ export default function Homepage() {
         let text = document.getElementById('text');
         let header = document.getElementById('header');
         let headerContainer = document.getElementById('header-container');
+        let introduction = document.getElementById('introduction')
+        let steps = document.getElementById('steps')
+        let surfriders = document.getElementById('surfriders')
+        let plasticoceans = document.getElementById('plasticoceans')
+        let oceana = document.getElementById('oceana')
 
         window.addEventListener('scroll', function() {
             let value = window.scrollY;
@@ -34,18 +39,36 @@ export default function Homepage() {
             text.style.marginRight = 3 * value + 'px';
             headerContainer.style.top = value + 'px'
 
+            if (value > 400) {
+                introduction.style.opacity = "100%"
+            }
+
             if (value > 850) {
                 header.style.transform =  "translateY(-100%)";
                 headerContainer.addEventListener("mouseover", function( event ) {
                     header.style.transform = "translateY(0%)";
-                    console.log("hover")
                 })
                 headerContainer.addEventListener("mouseout", function( event ) {
                     header.style.transform = "translateY(-100%)";
-                    console.log("off")
                 })
             } else {
                 header.style.transform =  "translateY(0)";
+            }
+            
+            if (value > 1100) {
+                steps.style.opacity = "100%"
+            } 
+
+            if (value > 1300) {
+                surfriders.style.transform = "translateX(0)"
+            }
+
+            if (value > 1700) {
+                plasticoceans.style.transform = "translateX(0)"
+            }
+
+            if (value > 2000) {
+                oceana.style.transform = "translateX(0)"
             }
         })
     })
@@ -100,58 +123,67 @@ export default function Homepage() {
                 <img src={tree} id="tree" alt="Homepage Tree"/>
             </section>
             <article id="boxOne">
-                <div>
-                    <h2 id="titleSec">T h e &nbsp;&nbsp;f u t u r e &nbsp;&nbsp;of&nbsp;&nbsp;E d u c a t i o n. . .</h2>
-                </div>  
-                <div>
-                    <p id="paragraphSec">Welcome to "Garbage Aim" also known as "G-aim" <br></br> Our goal is to inspire individuals to take a stand and learn more about waste disposal in an interactive aim game.<br></br><br></br>Put your aim to the test and pick up falling pieces of trash before it hits the beach floor! Make sure you don't miss, as you only have six lives to lose!<br /><br />Pit your aim against other players and get the results you are looking for. The detailed statistics and the leaderboard are great ways to test your progress and at the same time, educate yourselves on the importance of proper waste management. <br/><br/>Help protect animals like Sparky and Stormy!</p>
-                    <div style={{display: 'flex', justifyContent: 'center', paddingTop: "1em"}}>
-                        <img src={stormy} alt="Stormy" style={{height:"5%", width: "5%"}}/>
-                        <img src={sparky} alt="Sparky" style={{height:"5%", width: "5%", paddingTop: "10px"}}/>
+                <div id="introduction">
+                    <div>
+                        <h2 id="titleSec">T h e &nbsp;&nbsp;f u t u r e &nbsp;&nbsp;of&nbsp;&nbsp;E d u c a t i o n. . .</h2>
+                    </div>  
+                    <div>
+                        <p id="paragraphSec">Welcome to "Garbage Aim" also known as "G-aim" <br></br> Our goal is to inspire individuals to take a stand and learn more about waste disposal in an interactive aim game.<br></br><br></br>Put your aim to the test and pick up falling pieces of trash before it hits the beach floor! Make sure you don't miss, as you only have six lives to lose!<br /><br />Pit your aim against other players and get the results you are looking for. The detailed statistics and the leaderboard are great ways to test your progress and at the same time, educate yourselves on the importance of proper waste management. <br/><br/>Help protect animals like Sparky and Stormy!</p>
+                        <div style={{display: 'flex', justifyContent: 'center', paddingTop: "1em"}}>
+                            <img src={stormy} alt="Stormy" style={{height:"5%", width: "5%"}}/>
+                            <img src={sparky} alt="Sparky" style={{height:"5%", width: "5%", paddingTop: "10px"}}/>
+                        </div>
                     </div>
-
                 </div>
-                <div>
-                    <h2 id="titleSec" style={{paddingTop: "1em"}}>H o w &nbsp; y o u &nbsp; c a n &nbsp; h e l p</h2>
+                <div id="steps">
+                    <div>
+                        <h2 id="titleSec" style={{paddingTop: "1em"}}>H o w &nbsp; y o u &nbsp; c a n &nbsp; h e l p</h2>
+                    </div>
+                    <div>
+                        <p id="paragraphSec">There are many ways you can help. Simply picking up pieces of litter you find and putting them in their appropriate bins can help make a difference. Try your best to purchase low-waste and reusable options wherever possible, or even volunteer! Also consider donating or being involved with some of the following Canadian Oceancare organizations:<br /><br /></p>
+                    </div>
                 </div>
-                <div>
-                    <p id="paragraphSec">There are many ways you can help. Simply picking up pieces of litter you find and putting them in their appropriate bins can help make a difference. Try your best to purchase low-waste and reusable options wherever possible, or even volunteer! Also consider donating or being involved with some of the following Canadian Oceancare organizations:<br /><br /></p>
-                </div>
-                <div className="organizations-div">
-                    <a href="http://www.canada.surfrider.org/">
-                        <img src={surfriders} alt="Surfriders Canada Logo" style={{width: "80%", marginLeft: "5em"}}/>
-                    </a>
-                    <p id="paragraphSec-org">
+               <div id="surfriders">
+                    <div className="organizations-div">
                         <a href="http://www.canada.surfrider.org/">
-                            <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>The Surfrider Foundation</h1>
+                            <img src={surfriders} alt="Surfriders Canada Logo" style={{width: "80%", marginLeft: "5em"}}/>
                         </a>
-                        <em>The Surfrider Foundation is a community of everyday people who passionately protect our playground - the ocean, waves, and beaches that provide us so much enjoyment.</em><br />
-                        The Surfrider Foundation USA is a U.S. 501 grassroots non-profit environmental organization that works to protect and preserve the world's oceans, waves and beaches. It focuses on water quality, beach access, beach and surf spot preservation, and sustaining marine and coastal ecosystems. The Canadian chapters of Surfrider Foundation Canada (SFC) have an impressive track record of environmental innovation in diverse Canadian coastal communities focusing on plastic pollution, clean water, coastal preservation, ocean protection, and beach access.
-                    </p>
+                        <p id="paragraphSec-org">
+                            <a href="http://www.canada.surfrider.org/">
+                                <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>The Surfrider Foundation</h1>
+                            </a>
+                            <em>The Surfrider Foundation is a community of everyday people who passionately protect our playground - the ocean, waves, and beaches that provide us so much enjoyment.</em><br />
+                            The Surfrider Foundation USA is a U.S. 501 grassroots non-profit environmental organization that works to protect and preserve the world's oceans, waves and beaches. It focuses on water quality, beach access, beach and surf spot preservation, and sustaining marine and coastal ecosystems. The Canadian chapters of Surfrider Foundation Canada (SFC) have an impressive track record of environmental innovation in diverse Canadian coastal communities focusing on plastic pollution, clean water, coastal preservation, ocean protection, and beach access.
+                        </p>
+                    </div>
                 </div>
-                <div className="organizations-div">
-                    <p id="paragraphSec-org">
-                        <a href="https://plasticoceans.ca/">
-                            <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>Plastic Oceans Canada</h1>
+                <div id="plasticoceans">
+                    <div className="organizations-div">
+                        <p id="paragraphSec-org">
+                            <a href="https://plasticoceans.ca/">
+                                <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>Plastic Oceans Canada</h1>
+                            </a>
+                            <em>Providing education that inspires change through direct action, advocacy, and science innovation.</em><br />
+                            Plastic Oceans Canada’s mission is to solve plastic pollution. Plastic Oceans Canada creates change by advocating for Canadian businesses to take impactful steps towards eliminating their plastic pollution footprint, driving towards implementation of changes with government, producers, recyclers and consumers and supporting and implementing programs to clean our coastlines.
+                        </p>
+                        <a href="https://plasticoceans.ca/" style={{paddingRight: "25em"}}>
+                            <img src={plasticoceans} alt="Plastic Oceans Logo" style={{width: "200%", height: "80%", paddingLeft: "-15em"}}/>
                         </a>
-                        <em>Providing education that inspires change through direct action, advocacy, and science innovation.</em><br />
-                        Plastic Oceans Canada’s mission is to solve plastic pollution. Plastic Oceans Canada creates change by advocating for Canadian businesses to take impactful steps towards eliminating their plastic pollution footprint, driving towards implementation of changes with government, producers, recyclers and consumers and supporting and implementing programs to clean our coastlines.
-                    </p>
-                    <a href="https://plasticoceans.ca/" style={{paddingRight: "25em"}}>
-                        <img src={plasticoceans} alt="Plastic Oceans Logo" style={{width: "200%", height: "80%", paddingLeft: "-15em"}}/>
-                    </a>
+                    </div>
                 </div>
-                <div className="organizations-div">
-                    <a href="https://oceana.ca/en/">
-                        <img className="org-name" src={oceana} alt="Oceana Logo" style={{width: "80%", marginLeft: "5em", marginTop: "7em"}}/>
-                    </a>
-                    <p id="paragraphSec-org">
+                <div id="oceana">
+                    <div className="organizations-div">
                         <a href="https://oceana.ca/en/">
-                            <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>Oceana</h1>
+                            <img className="org-name" src={oceana} alt="Oceana Logo" style={{width: "80%", marginLeft: "5em", marginTop: "7em"}}/>
                         </a>
-                        <em>Oceana Canada seeks to make our oceans as rich, healthy and abundant as they once were.</em><br />
-                        Oceana Canada was established as an independent charity in 2015 and is part of the largest international advocacy group dedicated solely to ocean conservation. Canada has the world’s longest coastline in the world, with an ocean surface of 7.1 million square kilometres, or 70 per cent of its landmass. We believe that Canada has a national and global obligation to manage our natural resources responsibly and help ensure a sustainable source of protein for the world’s growing population.
-                    </p>
+                        <p id="paragraphSec-org">
+                            <a href="https://oceana.ca/en/">
+                                <h1 className="org-name" style={{textAlign: "left", fontSize: "200%", paddingBottom: "0.25em"}}>Oceana</h1>
+                            </a>
+                            <em>Oceana Canada seeks to make our oceans as rich, healthy and abundant as they once were.</em><br />
+                            Oceana Canada was established as an independent charity in 2015 and is part of the largest international advocacy group dedicated solely to ocean conservation. Canada has the world’s longest coastline in the world, with an ocean surface of 7.1 million square kilometres, or 70 per cent of its landmass. We believe that Canada has a national and global obligation to manage our natural resources responsibly and help ensure a sustainable source of protein for the world’s growing population.
+                        </p>
+                    </div>
                 </div>
             </article>
         </body>

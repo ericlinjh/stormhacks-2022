@@ -187,6 +187,7 @@ section #btn
 
 div #boxOne {
   padding-top: 10em;
+  padding-bottom: 50px;
   z-index: 99;
   background-color: #FDF7C2;
 }
@@ -218,6 +219,31 @@ div #paragraphSec-org{
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#introduction {
+  opacity: 0%;
+  transition: opacity 0.5s;
+}
+
+#steps {
+  opacity: 0%;
+  transition: opacity 0.5s;
+}
+
+#surfriders {
+  transform: translateX(100%);
+  transition: transform 0.75s;
+}
+
+#plasticoceans {
+  transform: translateX(-100%);
+  transition: transform 0.75s;
+}
+
+#oceana {
+  transform: translateX(100%);
+  transition: transform 0.75s;
 }
 
 .leaderboard-body {
