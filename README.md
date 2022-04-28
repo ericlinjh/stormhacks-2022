@@ -1,14 +1,24 @@
+<p align="center">
+<a align="center" href="https://ericlinjh.github.io/stormhacks-2022/" target="_blank">
+  <img src="https://raw.githubusercontent.com/ericlinjh/stormhacks-2022/master/frontend/src/images/parallax-homepage/gaimLogo.png" alt="Garbage Aim logo" align="center">
+</a>
+</p>
+<h1 align="center">Garbage Aim</h1>
+<a href="https://youtu.be/jj-33JoIDeI">Video Demonstration</a>
+<br />
+<a href="https://devpost.com/software/garbage-aim">Devpost Listing</a>
+
+## What it does
+"G-aim" is a web app that has the goal of inspiring individuals to take a stand and learn more about waste disposal through an interactive game. We put your aim to the test while clicking on falling pieces of trash before it hits the beach floor! You also have 6 lives to lose, so use them wisely! 
+
+Pit your aim against other players and get the results you are looking for by also seeing your name appear on the leaderboard. It's a great way to test your progress and also educate yourselves on the importance of waste management.
+
 ## Inspiration
 In Canada, we produced nearly 1.33 billion metric tonnes of waste. This roughly translates to 36.1 tonnes per person! Once garbage ends up in our environment, it contaminates oceans, beaches and various other coastal regions. It's the responsibility of everyone to help manage and reduce their waste overall. That is why we were inspired to create "Garbage Aim", also known as "G-Aim."
 
 Throughout our lives, we've always wanted to improve our FPS skills, especially in games such as Valorant, Apex Legends, and CSGO. We have also wanted to be more environmentally conscious about our actions when throwing out waste. We recognized both of our issues and wanted to combine them into something extraordinary.
 
 Our passion for video games has inspired us to put an interactive twist on our message; virtually pick up the garbage and through your score see how rampant ocean and beach pollution has gotten. 
-
-## What it does
-"G-aim" is a web app that has the goal of inspiring individuals to take a stand and learn more about waste disposal through an interactive game. We put your aim to the test while clicking on falling pieces of trash before it hits the beach floor! You also have 6 lives to lose, so use them wisely! 
-
-Pit your aim against other players and get the results you are looking for by also seeing your name appear on the leaderboard. It's a great way to test your progress and also educate yourselves on the importance of waste management.
 
 ## How we built it
 We started off designing our web app through Figma and photoshop to get a rough idea of what we wanted our application to function and look like. We then converted our designs to functional code through React and using MUI components. Then we focused most of our time creating the game logic and environment with Three.js (create the 3D models of the beach and garbage bag). We used MongoDB Altas as a database in the cloud to store the data for our app. We used Express.js to handle all the routing and to decide which API to use. We then connected the frontend and the backend with Axios, which made calls to the API when the server was running.
