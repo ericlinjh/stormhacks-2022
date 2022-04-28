@@ -8,7 +8,7 @@ import { useRef, Suspense } from 'react'
 export default function Beach() {
     // garbageRef = useRef()
     // console.log(garbageRef.current)
-    const gltf = useLoader(GLTFLoader, '/beach.glb')
+    const gltf = useLoader(GLTFLoader, 'beach.glb')
     return (
       <Suspense fallback={null}>
         <group  rotation={[0, -Math.PI/2, 0]} position={[5, 0, 0]} > 

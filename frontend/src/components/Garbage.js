@@ -3,7 +3,7 @@ import { useGLTF } from "@react-three/drei";
 
 export default function Garbage( { onClick, position} ) {
   const group = useRef();
-  const { nodes, materials } = useGLTF("/garbage.glb");
+  const { nodes, materials } = useGLTF("garbage.glb");
   return (
     <group ref={group} position={position} dispose={null}>
       <mesh
@@ -19,4 +19,4 @@ export default function Garbage( { onClick, position} ) {
   );
 }
 
-useGLTF.preload("/garbage.glb");
+useGLTF.preload("garbage.glb");

@@ -36,9 +36,9 @@ export default function Game() {
         }
     })
 
-    useEffect(() => {
-        console.log(name)
-    }, [name])
+    // useEffect(() => {
+    //     console.log(name)
+    // }, [name])
 
 
     useEffect(() => {
