@@ -1,29 +1,29 @@
 {
   "files": {
-    "main.css": "./static/css/main.34930c69.css",
-    "main.js": "./static/js/main.0a748488.js",
-    "static/js/787.cda612ba.chunk.js": "./static/js/787.cda612ba.chunk.js",
-    "static/media/seagulls.mp3": "./static/media/seagulls.ece30c71a8b8c1242ae9.mp3",
-    "static/media/beach.png": "./static/media/beach.8311a9d24c0df163d5e8.png",
-    "static/media/California.ttf": "./static/media/California.cb28176f5a1ec682c3f9.ttf",
-    "static/media/sparky.png": "./static/media/sparky.2bd87ce0f03f8030a9cc.png",
-    "static/media/stormy.png": "./static/media/stormy.0d0ee53a4b82f5b84ed2.png",
-    "static/media/oceana.png": "./static/media/oceana.1595f6cf21f1eae9abae.png",
-    "static/media/tree.png": "./static/media/tree.c1b2517c8787e6f40d80.png",
-    "static/media/clouds.png": "./static/media/clouds.ca80be966e3742f510cb.png",
-    "static/media/surfriders.png": "./static/media/surfriders.17c9f06e503740eb5607.png",
-    "static/media/ocean.png": "./static/media/ocean.f95851b0481bf6ac7587.png",
-    "static/media/island.png": "./static/media/island.de819ff052903040cafa.png",
-    "static/media/plasticoceans.png": "./static/media/plasticoceans.686deae5ff3c6017d92f.png",
-    "static/media/gaimLogo.png": "./static/media/gaimLogo.2bb30e6842aa6b43c008.png",
-    "static/media/arrow-down.png": "./static/media/arrow-down.472a0b516d20437f2223.png",
-    "index.html": "./index.html",
-    "main.34930c69.css.map": "./static/css/main.34930c69.css.map",
-    "main.0a748488.js.map": "./static/js/main.0a748488.js.map",
-    "787.cda612ba.chunk.js.map": "./static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/stormhacks-2022/static/css/main.1ed75b50.css",
+    "main.js": "/stormhacks-2022/static/js/main.5ed43b11.js",
+    "static/js/787.cda612ba.chunk.js": "/stormhacks-2022/static/js/787.cda612ba.chunk.js",
+    "static/media/seagulls.mp3": "/stormhacks-2022/static/media/seagulls.ece30c71a8b8c1242ae9.mp3",
+    "static/media/beach.png": "/stormhacks-2022/static/media/beach.8311a9d24c0df163d5e8.png",
+    "static/media/California.ttf": "/stormhacks-2022/static/media/California.cb28176f5a1ec682c3f9.ttf",
+    "static/media/sparky.png": "/stormhacks-2022/static/media/sparky.2bd87ce0f03f8030a9cc.png",
+    "static/media/stormy.png": "/stormhacks-2022/static/media/stormy.0d0ee53a4b82f5b84ed2.png",
+    "static/media/oceana.png": "/stormhacks-2022/static/media/oceana.1595f6cf21f1eae9abae.png",
+    "static/media/tree.png": "/stormhacks-2022/static/media/tree.c1b2517c8787e6f40d80.png",
+    "static/media/clouds.png": "/stormhacks-2022/static/media/clouds.ca80be966e3742f510cb.png",
+    "static/media/surfriders.png": "/stormhacks-2022/static/media/surfriders.17c9f06e503740eb5607.png",
+    "static/media/ocean.png": "/stormhacks-2022/static/media/ocean.f95851b0481bf6ac7587.png",
+    "static/media/island.png": "/stormhacks-2022/static/media/island.de819ff052903040cafa.png",
+    "static/media/plasticoceans.png": "/stormhacks-2022/static/media/plasticoceans.686deae5ff3c6017d92f.png",
+    "static/media/gaimLogo.png": "/stormhacks-2022/static/media/gaimLogo.2bb30e6842aa6b43c008.png",
+    "static/media/arrow-down.png": "/stormhacks-2022/static/media/arrow-down.472a0b516d20437f2223.png",
+    "index.html": "/stormhacks-2022/index.html",
+    "main.1ed75b50.css.map": "/stormhacks-2022/static/css/main.1ed75b50.css.map",
+    "main.5ed43b11.js.map": "/stormhacks-2022/static/js/main.5ed43b11.js.map",
+    "787.cda612ba.chunk.js.map": "/stormhacks-2022/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.34930c69.css",
-    "static/js/main.0a748488.js"
+    "static/css/main.1ed75b50.css",
+    "static/js/main.5ed43b11.js"
   ]
 }
