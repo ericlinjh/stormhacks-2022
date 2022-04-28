@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/stormhacks-2022/static/css/main.1ed75b50.css",
-    "main.js": "/stormhacks-2022/static/js/main.64b4e241.js",
+    "main.js": "/stormhacks-2022/static/js/main.c8c4044d.js",
     "static/js/787.cda612ba.chunk.js": "/stormhacks-2022/static/js/787.cda612ba.chunk.js",
     "static/media/seagulls.mp3": "/stormhacks-2022/static/media/seagulls.ece30c71a8b8c1242ae9.mp3",
     "static/media/beach.png": "/stormhacks-2022/static/media/beach.8311a9d24c0df163d5e8.png",
@@ -19,11 +19,11 @@
     "static/media/arrow-down.png": "/stormhacks-2022/static/media/arrow-down.472a0b516d20437f2223.png",
     "index.html": "/stormhacks-2022/index.html",
     "main.1ed75b50.css.map": "/stormhacks-2022/static/css/main.1ed75b50.css.map",
-    "main.64b4e241.js.map": "/stormhacks-2022/static/js/main.64b4e241.js.map",
+    "main.c8c4044d.js.map": "/stormhacks-2022/static/js/main.c8c4044d.js.map",
     "787.cda612ba.chunk.js.map": "/stormhacks-2022/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1ed75b50.css",
-    "static/js/main.64b4e241.js"
+    "static/js/main.c8c4044d.js"
   ]
 }
