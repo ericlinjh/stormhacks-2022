@@ -14,11 +14,11 @@ export default function TempLeaderboard() {
   useEffect(() => {
     getAllScores()
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             setScores(response.data.scores);
         })
         .catch(e => {
-            console.log(e);
+            // console.log(e);
         });
 }, [])
 
@@ -27,7 +27,7 @@ export default function TempLeaderboard() {
         return b.score - a.score;
       }); 
 
-      console.log(scores)
+      // console.log(scores)
     
     return(
       <body style={{

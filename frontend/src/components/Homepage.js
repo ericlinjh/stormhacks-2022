@@ -18,7 +18,6 @@ import sparky from '../images/sparky.png'
 
 export default function Homepage() {
     useEffect(() => {
-        console.log("test");
         let clouds = document.getElementById('clouds');
         let sun = document.getElementById('sun');
         let island = document.getElementById('island');
